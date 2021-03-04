@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.eom_rfid">
+
+    <!--往sdcard中写入数据的权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--在sdcard中创建/删除文件的权限 -->
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".base.BaseApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.EOMRFID">
+
+        <activity
+            android:name=".ui.activity.login.LoginActivity"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.activity.main.MainActivity" />
+        <activity android:name=".ui.activity.check.CheckActivity" />
+        <activity android:name=".ui.activity.checkout.CheckoutActivity" />
+        <activity android:name=".ui.activity.warehouse.WarehouseActivity" />
+        <activity android:name=".ui.activity.drug_search.DrugSearchActivity" />
+        <activity android:name=".ui.activity.check.result.ScanResultActivity" />
+        <activity android:name=".ui.activity.checkout.BatchCheckoutActivity" />
+        <activity android:name=".ui.activity.write.WriteActivity" />
+        <activity android:name=".ui.activity.warehouse.BatchWarehouseActivity" />
+    </application>
+
+</manifest>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="ViewModel"
+            type="com.example.eom_rfid.ui.activity.main.MainViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="50dp">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/iv_logout"
+                android:text="@{ViewModel.userName}"
+                android:textColor="@color/colorTxtBlack"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/iv_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:onClick="onClick"
+                android:src="@mipmap/logout"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:text="国家应急救援队仓储管理"
+            android:textColor="@color/colorTxtBlack"
+            android:textSize="30sp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="110dp"
+            android:background="@drawable/shape_solid_bggrey_radius_4"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tv_check"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_solid_white_radius_8"
+                    android:drawableTop="@mipmap/activity_check"
+                    android:drawablePadding="20dp"
+                    android:gravity="center"
+                    android:onClick="onClick"
+                    android:padding="10dp"
+                    android:text="盘点"
+                    android:textColor="@color/colorTxtBlack"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tv_checkout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="30dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_solid_white_radius_8"
+                    android:drawableTop="@mipmap/activity_checkout"
+                    android:drawablePadding="20dp"
+                    android:gravity="center"
+                    android:onClick="onClick"
+                    android:padding="10dp"
+                    android:text="出库"
+                    android:textColor="@color/colorTxtBlack"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tv_warehouse"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_solid_white_radius_8"
+                    android:drawableTop="@mipmap/activity_warehouse"
+                    android:drawablePadding="20dp"
+                    android:gravity="center"
+                    android:onClick="onClick"
+                    android:padding="10dp"
+                    android:text="入库"
+                    android:textColor="@color/colorTxtBlack"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tv_drug_search"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="30dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_solid_white_radius_8"
+                    android:drawableTop="@mipmap/activity_search"
+                    android:drawablePadding="20dp"
+                    android:gravity="center"
+                    android:onClick="onClick"
+                    android:padding="10dp"
+                    android:text="商品查询"
+                    android:textColor="@color/colorTxtBlack"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tv_write"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_solid_white_radius_8"
+                    android:drawableTop="@mipmap/activity_write"
+                    android:drawablePadding="20dp"
+                    android:gravity="center"
+                    android:onClick="onClick"
+                    android:padding="10dp"
+                    android:text="RFID管理"
+                    android:textColor="@color/colorTxtBlack"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tv_logout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="30dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_solid_white_radius_8"
+                    android:drawableTop="@mipmap/activity_logout"
+                    android:drawablePadding="20dp"
+                    android:gravity="center"
+                    android:onClick="onClick"
+                    android:padding="10dp"
+                    android:text="系统退出"
+                    android:textColor="@color/colorTxtBlack"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

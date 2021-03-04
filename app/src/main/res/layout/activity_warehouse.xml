@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="ViewModel"
+            type="com.example.eom_rfid.ui.activity.warehouse.WarehouseViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBgGrey"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:onClick="onClick"
+                android:scaleType="center"
+                android:src="@mipmap/back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="入库"
+                android:textColor="@color/colorTxtBlack"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/iv_scan"
+                android:layout_width="50dp"
+                android:onClick="onClick"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:scaleType="center"
+                android:src="@mipmap/scan" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/shape_solid_white_radius_8"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="类&#8195;&#8195;型"
+                    android:textColor="@color/colorTxtBlack"
+                    android:textSize="14sp" />
+
+                <Spinner
+                    android:id="@+id/spinner_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/layer_list_spinner_bg"
+                    android:dropDownVerticalOffset="31dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="仓&#8195;&#8195;库"
+                    android:textColor="@color/colorTxtBlack"
+                    android:textSize="14sp" />
+
+                <Spinner
+                    android:id="@+id/spinner_warehouse"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/layer_list_spinner_bg"
+                    android:dropDownVerticalOffset="31dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="区&#8195;&#8195;域"
+                    android:textColor="@color/colorTxtBlack"
+                    android:textSize="14sp" />
+
+                <Spinner
+                    android:id="@+id/spinner_zone"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/layer_list_spinner_bg"
+                    android:dropDownVerticalOffset="31dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="货&#8195;&#8195;架"
+                    android:textColor="@color/colorTxtBlack"
+                    android:textSize="14sp" />
+
+                <Spinner
+                    android:id="@+id/spinner_shelf"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/layer_list_spinner_bg"
+                    android:dropDownVerticalOffset="31dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="备&#8195;&#8195;注"
+                    android:textColor="@color/colorTxtBlack"
+                    android:textSize="14sp" />
+
+                <EditText
+                    style="@style/EditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/shape_solid_white_stroke_grey_radius_1"
+                    android:dropDownVerticalOffset="31dp"
+                    android:text="@={ViewModel.remark}" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/shape_solid_white_radius_8">
+
+            <TextView
+                android:id="@+id/tv_warehouse_single"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/shape_solid_grey_radius_50"
+                android:drawableTop="@mipmap/activity_warehouse_single"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:paddingTop="15dp"
+                android:text="单个入库"
+                android:textColor="@color/colorTxtBlack"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_warehouse_batch"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_below="@+id/tv_warehouse_single"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/shape_solid_grey_radius_50"
+                android:drawableTop="@mipmap/activity_warehouse_batch"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:paddingTop="15dp"
+                android:text="批量入库"
+                android:textColor="@color/colorTxtBlack"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>
